@@ -16,6 +16,8 @@ public:
 	virtual void Destroy(sf::RenderWindow* window){
 
 	}
+
+
 };
 
 class game_state{

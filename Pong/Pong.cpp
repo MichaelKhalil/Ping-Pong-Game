@@ -25,7 +25,7 @@ int main()
 				window.close();
 		}
 
-
+		window.clear(sf::Color::Black);
 		coreState.Update();
 		coreState.Render();
 
