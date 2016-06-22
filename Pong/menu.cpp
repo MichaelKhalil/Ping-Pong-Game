@@ -42,11 +42,21 @@ void menu::Render(sf::RenderWindow* window){
 	switch(this->selected){
 
 	case 0:
-		this->play->setColor(sf::Color::Green);
+		this->play->setColor(sf::Color::Blue);
 		break;
 	case 1:
-		this->quit->setColor(sf::Color::Green);
+		this->quit->setColor(sf::Color::Blue);
 
+	}
+
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Return)){
+		switch(this->selected){
+		case 0:
+			break;
+		case 1:
+			quitGame = true;
+			break;
+		}
 	}
 	window->draw(*this->title);
 	window->draw(*this->play);

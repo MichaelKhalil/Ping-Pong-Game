@@ -4,7 +4,7 @@
 #include "menu.h"
 
 game_state coreState; 
-
+bool quitGame = false;
 
 int main()
 {
@@ -30,6 +30,9 @@ int main()
 		coreState.Render();
 
 		window.display();
+		if(quitGame){
+			window.close();
+		}
 	}
 
 	return 0;
