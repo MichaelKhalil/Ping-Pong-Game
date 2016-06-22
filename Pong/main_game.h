@@ -11,11 +11,5 @@ public:
 	virtual void Destroy(sf::RenderWindow* window);
 
 private:
-	sf::Font* font;
-	sf::Text* title;
-	sf::Text* play;
-	sf::Text* quit;
 
-	int selected;
-	bool upKey, downKey;
 };

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "menu.h"
+#include "main_game.h"
 
 void menu::Initialize(sf::RenderWindow* window){
 	this->selected = 0;
@@ -40,7 +41,6 @@ void menu::Render(sf::RenderWindow* window){
 	this->play->setColor(sf::Color::White);
 	this->quit->setColor(sf::Color::White);
 	switch(this->selected){
-
 	case 0:
 		this->play->setColor(sf::Color::Blue);
 		break;
@@ -49,18 +49,20 @@ void menu::Render(sf::RenderWindow* window){
 
 	}
 
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Return)){
+
+	window->draw(*this->title);
+	window->draw(*this->play);
+	window->draw(*this->quit);
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Return)){
 		switch(this->selected){
 		case 0:
+			coreState.SetState(new main_game());
 			break;
 		case 1:
 			quitGame = true;
 			break;
 		}
 	}
-	window->draw(*this->title);
-	window->draw(*this->play);
-	window->draw(*this->quit);
 }
 void menu::Destroy(sf::RenderWindow* window){
 	delete this->font;
