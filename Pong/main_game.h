@@ -1,6 +1,7 @@
 #pragma once
 
 #include "game_state.h"
+#include "paddle_player.h"
 
 class main_game : public tiny_state{
 public:
@@ -11,5 +12,5 @@ public:
 	virtual void Destroy(sf::RenderWindow* window);
 
 private:
-
+	paddle_player* paddle;
 };

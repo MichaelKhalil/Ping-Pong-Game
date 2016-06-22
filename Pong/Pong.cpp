@@ -1,5 +1,5 @@
 
-
+#include <Windows.h>
 #include "game_state.h"
 #include "menu.h"
 
@@ -33,6 +33,7 @@ int main()
 		if(quitGame){
 			window.close();
 		}
+		Sleep(5);
 	}
 
 	return 0;
