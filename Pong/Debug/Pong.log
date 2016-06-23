@@ -1,44 +1,28 @@
-﻿Build started 6/22/2016 5:43:24 PM.
+﻿Build started 6/22/2016 6:37:43 PM.
      1>Project "C:\Users\Michael\Documents\GitHub\Ping-Pong-Game\Pong\Pong.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\Pong.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\Pong.unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main_game.cpp menu.cpp
-         main_game.cpp
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(24): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(24): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(24): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(27): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(27): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(27): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\main_game.cpp(13): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main_game.cpp menu.cpp score.cpp
+         score.cpp
          Generating Code...
          Compiling...
-         menu.cpp
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(24): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(24): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(24): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(27): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(27): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\paddle_player.h(27): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(11): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(11): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(19): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(19): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(25): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(28): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(36): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(37): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
-     1>c:\users\michael\documents\github\ping-pong-game\pong\menu.cpp(56): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
+         main_game.cpp
+     1>c:\users\michael\documents\github\ping-pong-game\pong\main_game.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\michael\documents\github\ping-pong-game\pong\main_game.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\michael\documents\github\ping-pong-game\pong\main_game.cpp(25): warning C4482: nonstandard extension used: enum 'sf::Keyboard::Key' used in qualified name
          Generating Code...
+         Skipping... (no relevant changes detected)
+         menu.cpp
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Michael\Documents\GitHub\Ping-Pong-Game\Debug\Pong.exe" /INCREMENTAL /NOLOGO "sfml-audio-d.lib" "sfml-graphics-d.lib" "sfml-main-d.lib" "sfml-system-d.lib" "sfml-window-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Pong.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Michael\Documents\GitHub\Ping-Pong-Game\Debug\Pong.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Michael\Documents\GitHub\Ping-Pong-Game\Debug\Pong.lib" /MACHINE:X86 Debug\Pong.exe.embed.manifest.res
+         Debug\ball.obj
          Debug\main_game.obj
+         Debug\paddle_player.obj
          Debug\Pong.obj
+         Debug\score.obj
          Debug\stdafx.obj
          Debug\menu.obj
        Manifest:
@@ -54,4 +38,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.55
+Time Elapsed 00:00:01.88
