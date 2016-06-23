@@ -28,6 +28,13 @@ public:
 			break;
 		}
 		Entity::Update();
+		//top bot collision
+		if(this->getPosition().y < 0){
+			this->move(0, 1.0f);
+		}
+		if(this->getPosition().y + this->getGlobalBounds().height > 600){
+			this->move(0, -1.0f);
+		}
 
 	}
 private:
