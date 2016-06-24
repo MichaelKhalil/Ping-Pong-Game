@@ -13,7 +13,7 @@ void main_game::Initialize(sf::RenderWindow* window){
 	this->player2 = new paddle_player(1);
 	this->player2->setPosition(window->getSize().x - this->player2->getGlobalBounds().width - 5, window->getSize().y/2 + this->player2->getGlobalBounds().height / 4);
 
-	this->ballObject = new ball(this->score1, this->score2, this->player1, this->player2);
+	this->ballObject = new ball(window, this->score1, this->score2, this->player1, this->player2);
 	this->ballObject ->setPosition(window->getSize().x/2, window->getSize().y/2);
 
 

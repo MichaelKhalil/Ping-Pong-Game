@@ -18,19 +18,19 @@ paddle_player::paddle_player(int playerNumber){
 void paddle_player::Update(){
 		switch(this->playerNumber){
 		case 0:
-			this->velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) - sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W);
+			this->velocity.y = 2 * sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) - 2 * sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W);
 			break;
 		default:
-			this->velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) - sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up);
+			this->velocity.y = 2 * sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) - 2 * sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up);
 			break;
 		}
 		Entity::Update();
 		//top bot collision
 		if(this->getPosition().y < 0){
-			this->move(0, 1.0f);
+			this->move(0, 2.0f);
 		}
 		if(this->getPosition().y + this->getGlobalBounds().height > 600){
-			this->move(0, -1.0f);
+			this->move(0, -2.0f);
 		}
 
 	}
