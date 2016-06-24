@@ -1,5 +1,6 @@
 #include "ball.h"
 #include <Windows.h>
+#include <iostream>
 ball::ball(sf::RenderWindow* window, Score* score1, Score* score2, paddle_player* player1, paddle_player* player2){
 	this->player1 = player1;
 	this->player2 = player2;
@@ -15,19 +16,23 @@ ball::ball(sf::RenderWindow* window, Score* score1, Score* score2, paddle_player
 
 void ball::Update(sf::RenderWindow* window){
 
-	//changing order of 
+	//changing order of statements seemed to help
 	if(this->checkCollision(this->player1)){
-		this->velocity.y *= -1;
+		//this->velocity.y *= -1;
 		this->velocity.x *= -1;
-		
-		this->incrementSpeed(window);
+		this->incrementSpeed();
 		
 	}
+
 	if( this->checkCollision(this->player2)){
-		this->incrementSpeed(window);
-		this->velocity.y *= -1;
+		this->incrementSpeed();
+		/*std::cout << this->velocity.x;
+		std::cout << this->velocity.y;*/
+		//this->velocity.y *= -1;
 		this->velocity.x *= -1;
-		
+		/*std::cout << this->velocity.x;
+		std::cout << this->velocity.y;
+		std::cout << "\n";*/
 
 	}
 	if(this->getPosition().y < 0 || this->getPosition().y + this->getGlobalBounds().height > window->getSize().y){
@@ -46,15 +51,41 @@ void ball::Update(sf::RenderWindow* window){
 
 void ball::Reset(sf::RenderWindow* window){
 	this->speed = 1.0f;
-	this->velocity.x = speed;
-	this->velocity.y = speed;
+	this->setStartVelocity();
+	//this->velocity.x = speed;
+	//this->velocity.y = speed;
 	this->setPosition(window->getSize().x / 2, window->getSize().y / 2);
 }
 
-void ball::incrementSpeed(sf::RenderWindow* window){
-	if(speed <= 6.0f){
-	this->speed += 1.0f;
-	this->velocity.x = speed;
-	this->velocity.y = speed;
+void ball::setStartVelocity(){
+	int i = rand();
+	if(i <= .25){
+		this->velocity.x = speed;
+		this->velocity.y = speed;
+	}
+	else if(i > .25 && i <= .5){
+		this->velocity.x = speed;
+		this->velocity.y = -speed;
+	}
+	else if(i > .5 && i <= .75){
+		this->velocity.x = -speed;
+		this->velocity.y = speed;
+	}
+	else{
+		this->velocity.x = -speed;
+		this->velocity.y = -speed;
+	}
+
+
+}
+void ball::incrementSpeed(){
+	if(this->speed <= 6.0f){
+		this->speed+=1;
+		if(this->velocity.y < 0)
+			this->velocity.y = -speed;
+		else
+			this->velocity.y = speed;
+		this->velocity.x = speed;
+		
 	}
 }

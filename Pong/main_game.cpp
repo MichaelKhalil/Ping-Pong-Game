@@ -19,15 +19,16 @@ void main_game::Initialize(sf::RenderWindow* window){
 
 }
 void main_game::Update(sf::RenderWindow* window){
-	this->ballObject->Update(window);
+
 	this->player1->Update();
 	this->player2->Update();
+	
 	this->score1->Update();
 	this->score2->Update();
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)){
 		coreState.SetState(new menu());
 	}
-
+	this->ballObject->Update(window);
 }
 void main_game::Render(sf::RenderWindow* window){
 	window->draw(*this->score1);
