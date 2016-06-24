@@ -9,5 +9,5 @@ void Score::IncrementScore(){
 }
 
 void Score::Update(){
-	this->setString("Score: " + std::to_string(this->value));
+	this->setString(std::to_string(this->value));
 }
