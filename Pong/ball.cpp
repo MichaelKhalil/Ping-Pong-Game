@@ -48,19 +48,31 @@ void ball::Update(sf::RenderWindow* window){
 	}
 
 	if( this->checkCollision(this->blockObject)){
-	//	if(this->getPosition().x <= this->blockObject->getPosition().x && this->getPosition().y <= this->blockObject->getPosition().y ){
-
-	//	}
-		this->velocity.x *= -1;
+		//top and bottom
+		if(this->getPosition().x > this->blockObject->getPosition().x - this->blockObject->getGlobalBounds().width/2 && this->getPosition().x < this->blockObject->getPosition().x + this->blockObject->getGlobalBounds().width/2){
+			this->velocity.y *= -1;
+		}
+		else//left and right
+			this->velocity.x *= -1;
 		this->blockObject->setPosition(-100,-100);
+
 	}
 		if( this->checkCollision(this->blockObject1)){
-		this->velocity.x *= -1;
+			if(this->getPosition().x > this->blockObject1->getPosition().x - this->blockObject1->getGlobalBounds().width/2 && this->getPosition().x < this->blockObject1->getPosition().x + this->blockObject1->getGlobalBounds().width/2){
+				this->velocity.y *= -1;
+		}
+			else
+				this->velocity.x *= -1;
 		this->blockObject1->setPosition(-100,-100);
 	}
-	if( this->checkCollision(this->blockObject2)){
-		this->velocity.x *= -1;
+		if( this->checkCollision(this->blockObject2)){
+			if(this->getPosition().x > this->blockObject2->getPosition().x - this->blockObject2->getGlobalBounds().width/2 && this->getPosition().x < this->blockObject2->getPosition().x + this->blockObject2->getGlobalBounds().width/2){
+				this->velocity.y *= -1;
+		}
+			else
+				this->velocity.x *= -1;
 		this->blockObject2->setPosition(-100,-100);
+
 	}
 
 
