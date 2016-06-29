@@ -1,14 +1,17 @@
 #include "ball.h"
 #include "entity.h"
-
+#include "block.h"
 #include <Windows.h>
 #include <iostream>
 
-ball::ball(sf::RenderWindow* window, Score* score1, Score* score2, paddle_player* player1, paddle_player* player2){
+ball::ball(sf::RenderWindow* window, Score* score1, Score* score2, paddle_player* player1, paddle_player* player2, block* blockObject, block* blockObject1, block* blockObject2){
 	this->player1 = player1;
 	this->player2 = player2;
 	this->score1 = score1;
 	this->score2 = score2;
+	this->blockObject = blockObject;
+	this->blockObject1 = blockObject1;
+	this->blockObject2 = blockObject2;
 	this->Load("ball.png");
 	this->speed = 1.0f;
 	this->Reset(window);
@@ -43,6 +46,24 @@ void ball::Update(sf::RenderWindow* window){
 		this->sound->play();
 		this->both = !this->both;
 	}
+
+	if( this->checkCollision(this->blockObject)){
+	//	if(this->getPosition().x <= this->blockObject->getPosition().x && this->getPosition().y <= this->blockObject->getPosition().y ){
+
+	//	}
+		this->velocity.x *= -1;
+		this->blockObject->setPosition(-100,-100);
+	}
+		if( this->checkCollision(this->blockObject1)){
+		this->velocity.x *= -1;
+		this->blockObject1->setPosition(-100,-100);
+	}
+	if( this->checkCollision(this->blockObject2)){
+		this->velocity.x *= -1;
+		this->blockObject2->setPosition(-100,-100);
+	}
+
+
 	//ball collision with top and bottom walls
 	if(this->getPosition().y < 0 || this->getPosition().y + this->getGlobalBounds().height > window->getSize().y){
 		this->velocity.y *= -1;
@@ -69,20 +90,25 @@ void ball::Reset(sf::RenderWindow* window){
 	this->speed = 1.0f;
 	this->setStartVelocity();
 	this->setPosition(window->getSize().x / 2, window->getSize().y / 2);
+	this->blockObject->blockReset(0);
+	this->blockObject1->blockReset(1);
+	this->blockObject2->blockReset(2);
 }
 
 void ball::setStartVelocity(){
 	//choose a random number, shoot ball to 4 quadrents based on number
 	int i = rand()%100;
+	std::cout << i;
+	std::cout << "\n";
 	if(i <= 25){
 		this->velocity.x = speed;
 		this->velocity.y = speed;
 	}
-	else if(i > 25 && i <= 5){
+	else if(i > 25 && i <= 50){
 		this->velocity.x = speed;
 		this->velocity.y = -speed;
 	}
-	else if(i > 5 && i <= 75){
+	else if(i > 50 && i <= 75){
 		this->velocity.x = -speed;
 		this->velocity.y = speed;
 	}
@@ -103,3 +129,4 @@ void ball::incrementSpeed(){
 		this->velocity.x = speed;
 	}
 }
+

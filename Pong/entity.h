@@ -40,6 +40,4 @@ private:
 	sf::Texture* texture;
 	sf::SoundBuffer* buffer;
 	sf::Sound* blip;
-
-
 };
