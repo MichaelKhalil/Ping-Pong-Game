@@ -2,7 +2,7 @@
 #include "entity.h"
 #include "block.h"
 #include <Windows.h>
-#include <iostream>
+
 
 ball::ball(sf::RenderWindow* window, Score* score1, Score* score2, paddle_player* player1, paddle_player* player2, block* blockObject, block* blockObject1, block* blockObject2){
 	this->player1 = player1;
@@ -49,28 +49,34 @@ void ball::Update(sf::RenderWindow* window){
 
 	if( this->checkCollision(this->blockObject)){
 		//top and bottom
-		if(this->getPosition().x > this->blockObject->getPosition().x - this->blockObject->getGlobalBounds().width/2 && this->getPosition().x < this->blockObject->getPosition().x + this->blockObject->getGlobalBounds().width/2){
+		if(this->getPosition().x > this->blockObject->getPosition().x - this->blockObject->getGlobalBounds().width/2 && this->getPosition().x < this->blockObject->getPosition().x + this->blockObject->getGlobalBounds().width/2-2){
 			this->velocity.y *= -1;
 		}
 		else//left and right
 			this->velocity.x *= -1;
+		this->buffer->loadFromFile("Sounds/break.wav");
+		this->sound->play();
 		this->blockObject->setPosition(-100,-100);
 
 	}
-		if( this->checkCollision(this->blockObject1)){
+		if( this->checkCollision(this->blockObject1)){//top and bottom
 			if(this->getPosition().x > this->blockObject1->getPosition().x - this->blockObject1->getGlobalBounds().width/2 && this->getPosition().x < this->blockObject1->getPosition().x + this->blockObject1->getGlobalBounds().width/2){
 				this->velocity.y *= -1;
 		}
-			else
+			else//left and right
 				this->velocity.x *= -1;
+		this->buffer->loadFromFile("Sounds/break.wav");
+		this->sound->play();
 		this->blockObject1->setPosition(-100,-100);
 	}
-		if( this->checkCollision(this->blockObject2)){
+		if( this->checkCollision(this->blockObject2)){//top and bottom
 			if(this->getPosition().x > this->blockObject2->getPosition().x - this->blockObject2->getGlobalBounds().width/2 && this->getPosition().x < this->blockObject2->getPosition().x + this->blockObject2->getGlobalBounds().width/2){
 				this->velocity.y *= -1;
 		}
-			else
+			else//left and right
 				this->velocity.x *= -1;
+		this->buffer->loadFromFile("Sounds/break.wav");
+		this->sound->play();
 		this->blockObject2->setPosition(-100,-100);
 
 	}
@@ -110,8 +116,6 @@ void ball::Reset(sf::RenderWindow* window){
 void ball::setStartVelocity(){
 	//choose a random number, shoot ball to 4 quadrents based on number
 	int i = rand()%100;
-	std::cout << i;
-	std::cout << "\n";
 	if(i <= 25){
 		this->velocity.x = speed;
 		this->velocity.y = speed;

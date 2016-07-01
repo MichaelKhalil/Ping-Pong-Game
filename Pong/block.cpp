@@ -12,7 +12,7 @@ void block::Update(){
 void block::blockReset(int number){
 	switch(number){
 	case 0:
-		setPosition(250, 400);
+		setPosition(280, 401);
 		break;
 	case 1:
 		setPosition(400, 180);
@@ -22,7 +22,5 @@ void block::blockReset(int number){
 		break;
 	}
 }
-
- int blockCount = 2;
 
 

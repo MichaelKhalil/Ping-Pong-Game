@@ -3,7 +3,7 @@
 
 
 paddle_player::paddle_player(int playerNumber){
-	//get paddle image from folder
+	//get paddle image from folder for each player
 	this->playerNumber = playerNumber;
 	switch(this->playerNumber){
 	case 0:

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "menu.h"
 #include "main_game.h"
 

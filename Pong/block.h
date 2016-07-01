@@ -12,5 +12,3 @@ public:
 private:
 	
 };
-
-extern int blockCount;
